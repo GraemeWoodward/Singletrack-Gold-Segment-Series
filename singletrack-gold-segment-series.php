@@ -3,7 +3,7 @@
  * Plugin Name: Singletrack Gold Segment Series
  * Plugin URI: https://github.com/eccentricdevotion/Singletrack-Gold-Segment-Series
  * Description: Display monthly segment leaderboards from Strava.
- * Version: 0.0.2
+ * Version: 0.0.3
  * Author: Eccentric Devotion & Graeme Woodward
  * Author URI: https://github.com/eccentricdevotion
  * License: GPL2
@@ -78,6 +78,9 @@ class Singletrack_Gold_Segments_Widget extends WP_Widget {
 					// Display club's latest activities
 					$singletrack_gold_output_men = singletrack_gold_call_strava( "https://www.strava.com/api/v3/segments/" . $v . "/leaderboard?club_id=" . $singletrack_gold_strava_clubid . "&date_range=this_month&gender=M&access_token=9f90aad7789de13bd286223d5eabb7aff7023234" );
 					$singletrack_gold_output_women = singletrack_gold_call_strava( "https://www.strava.com/api/v3/segments/" . $v . "/leaderboard?club_id=" . $singletrack_gold_strava_clubid . "&date_range=this_month&gender=F&access_token=9f90aad7789de13bd286223d5eabb7aff7023234" );
+                    // DEBUG
+					echo "\n".'<tr><td colspan="3" class="singletrack_gold_segment">'.$singletrack_gold_output_men.'</td></tr>';
+					echo "\n".'<tr><td colspan="3" class="singletrack_gold_segment">'.$singletrack_gold_output_women.'</td></tr>';
 					echo "\n".'<tr><td colspan="3" class="singletrack_gold_segment">Men</td></tr>';
 					singletrack_gold_getActivities( $singletrack_gold_output_men );
 					echo "\n".'<tr><td colspan="3" class="singletrack_gold_segment">Women</td></tr>';
